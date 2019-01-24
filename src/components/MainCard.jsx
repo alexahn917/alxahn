@@ -53,7 +53,10 @@ class MainCard extends React.Component {
             <Email/>
             <Mobile/>
           </div>
-          <div>
+          <div style={{ margin: 24, textAlign: 'right'}}>
+            <p>Work</p>
+            <p>Timeline</p>
+            <p>Portfolio</p>
             <Footer/>
           </div>
         </div>

@@ -6,16 +6,14 @@ import {Row} from 'antd';
 
 const styles = theme => ({
   container: {
-    backgroundColor: '#1f6bb2cc',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
   },
   component: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '100vh',
   },
 });
 

@@ -36,9 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider theme={theme}>
-          <CssBaseline>
-            <MainPage/>
-          </CssBaseline>
+          <MainPage/>
         </MuiThemeProvider>
       </div>
     );

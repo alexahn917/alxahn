@@ -13,8 +13,9 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    minHeight: '400px',
-    minWidth: '800px',
+    maxWidth: '650px',
+    padding: '0 50px',
+    margin: '20px',
   },
   cardContent: {
     display: 'flex',
@@ -35,7 +36,7 @@ const styles = theme => ({
 
 class NameCard extends React.Component {
   state = {
-    tagIndex: 2
+    tagIndex: 1
   };
 
   onChangeTag = (idx) => (e) => {

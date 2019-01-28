@@ -20,6 +20,7 @@ const styles = theme => ({
   },
   footer: {
     marginRight: theme.spacing.unit * 1,
+    textAlign: 'right',
   },
 });
 

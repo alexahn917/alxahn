@@ -3,21 +3,11 @@ import PropTypes from 'prop-types';
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Timeline } from 'antd';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import Zoom from '@material-ui/core/Zoom';
 import workExperiences from '../data/workExperiences';
 import '../styles/WorkExperiences.css';
 
 const styles = theme => ({
-  timeline: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    minHeight: '500px',
-    minWidth: '300px',
-    maxWidth: '500px',
-    margin: '0 50px 50px 50px',
-  },
 });
 
 const getWorkExperience = (work, idx) => {
@@ -50,11 +40,9 @@ class WorkExperiences extends React.Component {
     const {classes} = this.props;
     return (
       <Zoom in={true} style={{ transitionDelay: '300ms'}}>
-        <Paper className={classes.timeline} elevation={0}>
-          <Timeline mode="alternate">
-            {workExperiences.map( (work, idx) => getWorkExperience(work, idx) )}
-          </Timeline>
-        </Paper>
+        <Timeline mode="alternate">
+          {workExperiences.map( (work, idx) => getWorkExperience(work, idx) )}
+        </Timeline>
       </Zoom>
     )
   }

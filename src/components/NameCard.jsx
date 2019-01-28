@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Button } from 'antd';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import NameCardTags from './NameCardTags';
 import profile from '../data/profile';
 
 const styles = theme => ({
@@ -16,28 +16,30 @@ const styles = theme => ({
   },
   cardContent: {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
   },
   leftContent: {
     textAlign: 'left',
-    // marginLeft: theme.spacing.unit * 8,
   },
   rightContent: {
     textAlign: 'right',
-    // marginRight: theme.spacing.unit * 8,
-  },
-  noLineBtn: {
-    boxShadow: '0 0px 0 rgba(0, 0, 0, 0.0)',
-    borderColor: 'white',
-  },
-  footer: {
-    marginRight: -theme.spacing.unit * 1,
   },
 });
 
 class NameCard extends React.Component {
+  state = {
+    tagIndex: 1
+  };
+
+  onChangeTag = (idx) => (e) => {
+    this.setState({
+      tagIndex: idx,
+    });
+  };
+
   render() {
     const {classes} = this.props;
+    const {tagIndex} = this.state;
     return (
       <Paper className={classes.nameCard} elevation={20}>
         <div className={classes.cardContent}>
@@ -56,13 +58,7 @@ class NameCard extends React.Component {
             </Typography>
           </div>
           <div className={classes.rightContent}>
-            <p>Work</p>
-            <p>Timeline</p>
-            <p>Portfolio</p>
-            <div className={classes.footer}>
-              {profile.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={profile.facebook}/> : null}
-              {profile.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={profile.instagram}/> : null}
-            </div>
+            <NameCardTags tagIndex={tagIndex} onChangeTag={this.onChangeTag}/>
           </div>
         </div>
       </Paper>

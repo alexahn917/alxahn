@@ -4,6 +4,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import NameCardTags from './NameCardTags';
+import WorkExperiences from './WorkExperiences';
+import Portfolio from './Portfolio';
 import profile from '../data/profile';
 
 const styles = theme => ({
@@ -17,6 +19,7 @@ const styles = theme => ({
   cardContent: {
     display: 'flex',
     justifyContent: 'space-evenly',
+    padding: '50px 0 50px 0',
   },
   leftContent: {
     textAlign: 'left',
@@ -24,11 +27,15 @@ const styles = theme => ({
   rightContent: {
     textAlign: 'right',
   },
+  bottomContent: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 });
 
 class NameCard extends React.Component {
   state = {
-    tagIndex: 1
+    tagIndex: 2
   };
 
   onChangeTag = (idx) => (e) => {
@@ -40,6 +47,10 @@ class NameCard extends React.Component {
   render() {
     const {classes} = this.props;
     const {tagIndex} = this.state;
+
+    const workExperiences = tagIndex === 2 ? <WorkExperiences/> : <div/>;
+    const portfolio = tagIndex === 3 ? <Portfolio/> : <div/>;
+
     return (
       <Paper className={classes.nameCard} elevation={20}>
         <div className={classes.cardContent}>
@@ -61,6 +72,12 @@ class NameCard extends React.Component {
             <NameCardTags tagIndex={tagIndex} onChangeTag={this.onChangeTag}/>
           </div>
         </div>
+
+        <div className={classes.bottomContent}>
+          {workExperiences}
+          {portfolio}
+        </div>
+
       </Paper>
     )
   }

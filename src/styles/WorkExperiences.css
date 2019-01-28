@@ -1,0 +1,28 @@
+.timeline-item a {
+  margin: 5px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.timeline-item a:hover {
+  transition: .3s ease;
+  opacity: 0.5;
+}
+
+.timeline-item-container h5:hover {
+  transition: 1s ease;
+  font-size: 30px;
+}
+
+.timeline-item-container h6:hover {
+  transition: 1s ease;
+  font-size: 23px;
+}
+
+.ant-timeline-item-content {
+  top: -11px;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Paper from '@material-ui/core/Paper';
 import Zoom from '@material-ui/core/Zoom';
 
 const styles = theme => ({
@@ -13,7 +12,6 @@ class Portfolio extends React.Component {
   };
 
   render() {
-    const {classes} = this.props;
     return (
       <Zoom in={true} style={{ transitionDelay: '300ms'}}>
         <h1>

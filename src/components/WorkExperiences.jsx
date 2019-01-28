@@ -37,7 +37,6 @@ const getWorkExperience = (work, idx) => {
 
 class WorkExperiences extends React.Component {
   render() {
-    const {classes} = this.props;
     return (
       <Zoom in={true} style={{ transitionDelay: '300ms'}}>
         <Timeline mode="alternate">

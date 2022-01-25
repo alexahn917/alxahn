@@ -43,14 +43,12 @@ const getWorkExperience = (work, idx) => {
   )
 }
 
-class WorkExperiences extends React.Component {
-  render() {
-    return (
-      <Timeline mode="alternate" style={{position:'absolute', backgroundColor: 'white'}}>
-        {workExperiences.map( (work, idx) => getWorkExperience(work, idx) )}
-      </Timeline>
-    )
-  }
+const WorkExperiences = (props) => {
+  return (
+    <Timeline mode="alternate" style={{position:'absolute', backgroundColor: 'white'}}>
+      {workExperiences.map( (work, idx) => getWorkExperience(work, idx) )}
+    </Timeline>
+  )
 }
 
 WorkExperiences.propTypes = {

@@ -23,51 +23,56 @@ const styles = theme => ({
     justifyContent: 'flex-end',
     padding: 0,
     paddingLeft: 5,
-    paddingBottom: 5,
-  },
-  sns: {
-    justifyContent: 'flex-end',
-    padding: 0,
-    paddingLeft: 5,
-    paddingBottom: 5,
+    paddingTop: 5,
   },
 });
 
-class Categories extends React.Component {
-  render() {
-    const {classes} = this.props;
-    return (
-      <div className={classes.list}>
-        <List className={classes.tags} dense>
-          <ListItem className={classes.tag}>
-            <CheckableTag style={{margin:0}}>
-              <Typography variant="caption" gutterBottom>
-                info
-              </Typography>
-            </CheckableTag>
-          </ListItem>
-          <ListItem className={classes.tag}>
-            <CheckableTag style={{margin:0}}>
-              <Typography variant="caption" gutterBottom>
-                timeline
-              </Typography>
-            </CheckableTag>
-          </ListItem>
-          <ListItem className={classes.tag}>
-            <CheckableTag style={{margin:0}}>
-              <Typography variant="caption" gutterBottom>
-                portfolio
-              </Typography>
-            </CheckableTag>
-          </ListItem>
-          <ListItem className={classes.sns}>
-              {profile.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={profile.facebook}/> : null}
-              {profile.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={profile.instagram}/> : null}
-          </ListItem>
-        </List>
-      </div>
-    )
-  }
+const Categories = (props) => {
+  const {classes} = props;
+  return (
+    <div className={classes.list}>
+      <List className={classes.tags} dense>
+          {/* <ListItem className={classes.tag}>
+          <div style={{margin:0}}>
+            <img
+              src={"/img/profile_picture_crop.jpg"}
+              className={`smooth-image`}
+              width={75}
+              height={75}
+              objectFit={"cover"}
+              boxSizing="border-box"
+              style={{borderRadius:50, opacity:0.8, top: -50, right: -15, position: "absolute"}}
+            />
+          </div>
+        </ListItem> */}
+        <ListItem className={classes.tag}>
+          <CheckableTag style={{margin:0}}>
+            <Typography variant="caption" gutterBottom>
+              info
+            </Typography>
+          </CheckableTag>
+        </ListItem>
+        <ListItem className={classes.tag}>
+          <CheckableTag style={{margin:0}}>
+            <Typography variant="caption" gutterBottom>
+              timeline
+            </Typography>
+          </CheckableTag>
+        </ListItem>
+        <ListItem className={classes.tag}>
+          <CheckableTag style={{margin:0}}>
+            <Typography variant="caption" gutterBottom>
+              portfolio
+            </Typography>
+          </CheckableTag>
+        </ListItem>
+        <ListItem className={classes.tag}>
+            {profile.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={profile.facebook}/> : null}
+            {profile.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={profile.instagram}/> : null}
+        </ListItem>
+      </List>
+    </div>
+  )
 }
 
 Categories.propTypes = {

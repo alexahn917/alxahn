@@ -6,18 +6,16 @@ import Zoom from '@material-ui/core/Zoom';
 const styles = theme => ({
 });
 
-class Portfolio extends React.Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <Zoom in={true} style={{ transitionDelay: '300ms'}}>
-          <h1>
-            Portfolio
-          </h1>
-        </Zoom>
-      </div>
-    )
-  }
+const Portfolio = (props) => {
+  return (
+    <div className={styles.container}>
+      <Zoom in={true} style={{ transitionDelay: '300ms'}}>
+        <h1>
+          Portfolio
+        </h1>
+      </Zoom>
+    </div>
+  )
 }
 
 Portfolio.propTypes = {

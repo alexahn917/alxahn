@@ -18,6 +18,11 @@ const styles = theme => ({
   noLineBtn: {
     boxShadow: '0 0px 0 rgba(0, 0, 0, 0.0)',
     borderColor: 'white',
+    width: 30,
+    margin: -3,
+    fontSize: '16px',
+    borderRadius: '100%',
+    height: 30,
   },
   tag: {
     justifyContent: 'flex-end',
@@ -69,6 +74,7 @@ const Categories = (props) => {
         <ListItem className={classes.tag}>
             {profile.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={profile.facebook}/> : null}
             {profile.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={profile.instagram}/> : null}
+            {profile.linkedin ? <Button className={classes.noLineBtn} type="circle" icon="linkedin" href={profile.linkedin}/> : null}
         </ListItem>
       </List>
     </div>

@@ -2,8 +2,8 @@
 yarn build
 
 # copy js bundle to GCP bucket
-gsutil rsync -R build/ gs://alxahn/build
-gsutil cp app.yaml gs://alxahn
+gsutil rsync -R build/ gs://alxahn.appspot.com/build
+gsutil cp app.yaml gs://alxahn.appspot.com
 
-# deploy ops-place project
+# deploy project
 gcloud app --project alxahn deploy

@@ -11,7 +11,7 @@ const Portfolio = (props) => {
     <div className={styles.container}>
       <Zoom in={true} style={{ transitionDelay: '300ms'}}>
         <h1>
-          Portfolio
+          Resume
         </h1>
       </Zoom>
     </div>

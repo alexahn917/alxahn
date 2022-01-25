@@ -5,7 +5,7 @@ import Profile from '../components/Profile';
 import Categories from '../components/Categories';
 import Paper from '@material-ui/core/Paper';
 import {motion,useMotionValue, useTransform} from "framer-motion";
-import Typography from '@material-ui/core/Typography';
+
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -31,12 +31,6 @@ function MainPage(props) {
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [500, -500]);
   const rotateY = useTransform(x, [-100, 100], [-500, 500]);
-
-  const x1 = useMotionValue(0);
-  const y1 = useMotionValue(0);
-  const rotateX1 = useTransform(y, [-100, 100], [100, -100]);
-  const rotateY1= useTransform(x, [-100, 100], [-100, 100]);
-
 
   return (
     <div className={classes.container}>

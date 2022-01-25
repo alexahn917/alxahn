@@ -7,17 +7,15 @@ const styles = theme => ({
 });
 
 class Portfolio extends React.Component {
-  state = {
-    tagIndex: 1
-  };
-
   render() {
     return (
-      <Zoom in={true} style={{ transitionDelay: '300ms'}}>
-        <h1>
-          Portfolio
-        </h1>
-      </Zoom>
+      <div className={styles.container}>
+        <Zoom in={true} style={{ transitionDelay: '300ms'}}>
+          <h1>
+            Portfolio
+          </h1>
+        </Zoom>
+      </div>
     )
   }
 }

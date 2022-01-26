@@ -18,6 +18,13 @@ const styles = theme => ({
     flexDirection: 'column',
     borderRadius: 20,
   },
+  backcard: {
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: 20,
+    position: 'absolute',
+    top: -0,
+  },
   content: {
     display: 'flex',
     flexDirection: 'row',
@@ -29,28 +36,19 @@ function MainPage(props) {
   const {classes} = props;
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [500, -500]);
-  const rotateY = useTransform(x, [-100, 100], [-500, 500]);
+  const rotateX = useTransform(y, [-100, 3, 100], [500, 3, -500]);
+  const rotateY = useTransform(x, [-100, 3, 100], [-500, 3, 500]);
 
   return (
     <div className={classes.container}>
       
       <div style={{perspective: 10000}}>
-        <div style={{position: 'relative', top: -30, right: -5, fontSize: 20}}>
+        <div style={{position: 'relative', top: -30, right: -5, fontSize: 20, transform: "rotate(-3deg)"}}>
           flip it 🤏
         </div>
-        <motion.div style={{x, y, rotateX, rotateY, z: 10}} drag dragElastic={0.16} dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0}} whileTap={{cursor: "grabbing"}}>
+        <motion.div style={{x, y, rotateX, rotateY, z: 10}} drag dragElastic={0.13} dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0}} whileTap={{cursor: "grabbing"}}>
           <Paper className={classes.card} elevation={20}>
             <div className={classes.content}>
-              {/* <img
-                src={"/img/profile_picture_crop.jpg"}
-                className={`smooth-image`}
-                width={60}
-                height={60}
-                objectFit={"cover"}
-                boxSizing="border-box"
-                style={{borderRadius:50, opacity:0.9, top: 10, right: 10, position: "absolute"}}
-              /> */}
               <Profile/>
               <Categories />
             </div>

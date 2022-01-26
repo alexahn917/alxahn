@@ -31,7 +31,7 @@ function Main(props) {
   const zIndex = isVisible ? 100 : -100;
 
   return (
-    <div style={{position: 'absolute', perspective: 10000,  opacity, zIndex, transition: 'opacity 1s ease-in-out'}}>
+    <div style={{position: 'absolute', perspective: 10000,  opacity, zIndex, transition: 'opacity 0.7s ease-in-out'}}>
       <motion.div 
         style={{x, y, rotateX, rotateY}}
         drag 

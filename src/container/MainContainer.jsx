@@ -5,7 +5,7 @@ import {useState} from 'react';
 import Main from '../screens/Main';
 import Background from '../screens/Background';
 
-const FLIPP_THRESHOLD = 150;
+const FLIPP_THRESHOLD = 130;
 
 const styles = theme => ({
   container: {

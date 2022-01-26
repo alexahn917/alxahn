@@ -27,7 +27,7 @@ const styles = theme => ({
   },
 });
 
-function MainPage(props) {
+function Main(props) {
   const {classes, isVisible, onDragEnd, setFlipped} = props;
 
   const x = useMotionValue(0);
@@ -58,7 +58,7 @@ function MainPage(props) {
   );
 }
 
-MainPage.propTypes = {
+Main.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
   isVisible: PropTypes.bool.isRequired,
@@ -66,4 +66,4 @@ MainPage.propTypes = {
   setFlipped: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles, {withTheme: true})(MainPage);
+export default withStyles(styles, {withTheme: true})(Main);

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from "@material-ui/core/styles/withStyles";
 import {useState} from 'react';
-import MainPage from '../screens/MainPage';
+import Main from '../screens/Main';
 
 const FLIPP_THRESHOLD = 150;
 
@@ -21,20 +21,20 @@ function onDragEnd(rotateX, rotateY, setFlipped) {
   }
 }
 
-function MainPageContainer(props) {
+function MainContainer(props) {
   const {classes} = props;
   const [flipped, setFlipped] = useState(false);
 
   return (
     <div className={classes.container}>
-      <MainPage isVisible={!flipped} onDragEnd={onDragEnd} setFlipped={setFlipped}/>
+      <Main isVisible={!flipped} onDragEnd={onDragEnd} setFlipped={setFlipped}/>
     </div>
   );
 }
 
-MainPageContainer.propTypes = {
+MainContainer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, {withTheme: true})(MainPageContainer);
+export default withStyles(styles, {withTheme: true})(MainContainer);

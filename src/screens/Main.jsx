@@ -39,15 +39,15 @@ function Main(props) {
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0}} whileTap={{cursor: "grabbing"}} 
         onDragEnd={() => onDragEnd(rotateX, rotateY, onDragEndCallback)}
       >
-        <div style={{position: 'relative', top: -25, right: -5, fontSize: 20, transform: "rotate(-1deg)"}}>
-        flip it 🤏
-      </div>
         <Paper className={classes.card} elevation={20}>
           <div className={classes.content}>
             <Profile/>
             <Categories />
           </div>
         </Paper>
+        <div style={{position: 'relative', top: 15, right: -200, fontSize: 20, transform: "rotate(-1deg)"}}>
+          flip it 🤏
+        </div>
       </motion.div>
     </div>
   );

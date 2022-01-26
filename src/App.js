@@ -3,7 +3,7 @@ import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import './App.css';
 
-import MainPage from './pages/MainPage';
+import MainPageContainer from './pages/MainPageContainer';
 
 const theme = createMuiTheme({
   palette: {
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider theme={theme}>
-          <MainPage/>
+          <MainPageContainer/>
         </MuiThemeProvider>
       </div>
     );

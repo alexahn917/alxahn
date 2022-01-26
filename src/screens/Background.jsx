@@ -7,21 +7,17 @@ import {motion,useMotionValue, useTransform} from "framer-motion";
 
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   card: {
     display: 'flex',
-    flexDirection: 'column',
     borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '80%',
   },
   content: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '40px',
+    padding: '20px',
   },
   line: {
 
@@ -42,7 +38,7 @@ function Background(props) {
   return (
     <div style={{position: 'absolute', perspective: 10000,  opacity, zIndex, transition: 'opacity 0.7s ease-in-out'}}>
       <motion.div 
-        style={{x, y, rotateX, rotateY}}
+        style={{x, y, rotateX, rotateY, display: 'flex', alignItems: 'center', justifyContent: 'center'}}
         drag
         dragElastic={0.13} 
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0}} whileTap={{cursor: "grabbing"}} 

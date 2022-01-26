@@ -36,8 +36,8 @@ function MainPage(props) {
   const {classes} = props;
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 3, 100], [500, 3, -500]);
-  const rotateY = useTransform(x, [-100, 3, 100], [-500, 3, 500]);
+  const rotateX = useTransform(y, [-100, 3, 100], [300, 3, -100]);
+  const rotateY = useTransform(x, [-100, 3, 100], [-300, 3, 100]);
 
   return (
     <div className={classes.container}>

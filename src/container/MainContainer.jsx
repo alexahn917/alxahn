@@ -26,7 +26,7 @@ function onDragEnd(rotateX, rotateY, onDragEndCallback) {
 
 function MainContainer(props) {
   const {classes} = props;
-  const [screenIndex, setScreenIndex] = useState(3);
+  const [screenIndex, setScreenIndex] = useState(0);
 
   return (
     <div className={classes.container}>

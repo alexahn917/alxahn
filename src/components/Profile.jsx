@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from '@material-ui/core/Typography';
-import profile from '../data/profile';
+import {PROFILE_INFO} from '../data/constants';
 
 const styles = theme => ({
   content: {
@@ -20,16 +20,16 @@ const Profile = (props) => {
     <>
       <div className={classes.content}>
         <Typography variant="h4" gutterBottom style={{color: '#0050b3'}}>
-          {profile.name}
+          {PROFILE_INFO.name}
         </Typography>
         <Typography variant="h5" gutterBottom>
-          {profile.profession}
+          {PROFILE_INFO.profession}
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          <b>Email</b>: {profile.email}
+          <b>Email</b>: {PROFILE_INFO.email}
         </Typography>
         <Typography variant="subtitle1">
-          <b>Mobile</b>: {profile.phoneNumber}
+          <b>Mobile</b>: {PROFILE_INFO.phoneNumber}
         </Typography>
       </div>
     </>

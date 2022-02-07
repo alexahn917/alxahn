@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import {motion,useMotionValue, useTransform} from "framer-motion";
-
+import { HIGHLIGHTS } from '../data/constants';
 
 const styles = theme => ({
   card: {
@@ -24,7 +24,7 @@ const styles = theme => ({
   }
 });
 
-function Background(props) {
+function Highlights(props) {
   const {classes, isVisible, onDragEnd, onDragEndCallback} = props;
 
   const x = useMotionValue(0);
@@ -49,21 +49,17 @@ function Background(props) {
             <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 20}}>
               Highlights
             </Typography>
-            <div className={classes.line}>
-              <Typography variant="subtitle1" gutterBottom>
-                Alex is a Software Engineer from Meta, working on Instagram Ads team.
-              </Typography>
-            </div>
-            <div className={classes.line}>
-              <Typography variant="subtitle1" gutterBottom>
-                Alex is a Full Stack Engineer with experiences on Web, Mobile, Server, and Gaming.
-              </Typography>
-            </div>
-            <div className={classes.line}>
-              <Typography variant="subtitle1" gutterBottom>
-                Alex is currently leading a team of 6 engineers, overseeing Instagram ads product development and product growth.
-              </Typography>
-            </div>
+            {
+              HIGHLIGHTS.map((highlight) => {
+                return (
+                  <div className={classes.line}>
+                    <Typography variant="subtitle1" gutterBottom>
+                      {highlight}
+                    </Typography>
+                  </div>      
+                )
+              })
+            }
           </div>
         </Paper>
       </motion.div>
@@ -71,7 +67,7 @@ function Background(props) {
   );
 }
 
-Background.propTypes = {
+Highlights.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
   isVisible: PropTypes.bool.isRequired,
@@ -79,4 +75,4 @@ Background.propTypes = {
   onDragEndCallback: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles, {withTheme: true})(Background);
+export default withStyles(styles, {withTheme: true})(Highlights);

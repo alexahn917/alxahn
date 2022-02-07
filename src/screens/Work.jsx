@@ -5,24 +5,24 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import {motion,useMotionValue, useTransform} from "framer-motion";
-import workExperiences from '../data/workExperiences';
+import {WORK_EXPERIENCES} from '../data/constants';
 
 const styles = theme => ({
   card: {
     display: 'flex',
     borderRadius: 20,
-    maxWidth: '70%',
+    maxWidth: '500px',
+    minWidth: '400px',
   },
   content: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '20px',
+    padding: '30px',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     minWidth: 400,
     minHeight: 200,
     textAlign: 'left',
-    padding: 30,
   },
   line: {
 
@@ -31,7 +31,7 @@ const styles = theme => ({
 
 function Work(props) {
   const {classes, isVisible, onDragEnd, onDragEndCallback} = props;
-  const [idx, setIdx] = useState(1);
+  const [idx, setIdx] = useState(0);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -41,8 +41,8 @@ function Work(props) {
   const opacity = isVisible ? 1 : 0;
   const zIndex = isVisible ? 100 : -100;
 
-  const work = workExperiences[idx];
-  const callback = idx === workExperiences.length - 1 ? () => {onDragEndCallback(); setIdx(0)} : () => setIdx(idx + 1);
+  const work = WORK_EXPERIENCES[idx];
+  const callback = idx === WORK_EXPERIENCES.length - 1 ? () => {onDragEndCallback(); setIdx(0)} : () => setIdx(idx + 1);
 
   return (
     <div style={{position: 'absolute', perspective: 10000,  opacity, zIndex, transition: 'opacity 0.7s ease-in-out'}}>
@@ -55,9 +55,12 @@ function Work(props) {
       >
         <Paper className={classes.card} elevation={20}>
           <div className={classes.content}>
-            <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 20}}>
-              <b>{work.title}</b>
-            </Typography>
+            <div>
+              <img src={work.logo} style={{maxWidth: '75px', height: '50px', marginBottom: '5px'}} alt={work.title}/>
+              <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 20}}>
+                <b>{work.title}</b>
+              </Typography>
+            </div>
             <span className="timeline-item">
               <a href={work.link} style={{WorkImage: `url(${work.logo})`}}>
               </a>

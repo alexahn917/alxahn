@@ -5,7 +5,7 @@ import { Button, Tag } from 'antd';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import profile from '../data/profile';
+import {PROFILE_INFO} from '../data/constants';
 
 const { CheckableTag } = Tag;
 
@@ -72,9 +72,9 @@ const Categories = (props) => {
           </CheckableTag>
         </ListItem>
         <ListItem className={classes.tag}>
-            {profile.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={profile.facebook}/> : null}
-            {profile.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={profile.instagram}/> : null}
-            {profile.linkedin ? <Button className={classes.noLineBtn} type="circle" icon="linkedin" href={profile.linkedin}/> : null}
+            {PROFILE_INFO.facebook ? <Button className={classes.noLineBtn} type="circle" icon="facebook" href={PROFILE_INFO.facebook}/> : null}
+            {PROFILE_INFO.instagram ? <Button className={classes.noLineBtn} type="circle" icon="instagram" href={PROFILE_INFO.instagram}/> : null}
+            {PROFILE_INFO.linkedin ? <Button className={classes.noLineBtn} type="circle" icon="linkedin" href={PROFILE_INFO.linkedin}/> : null}
         </ListItem>
       </List>
     </div>

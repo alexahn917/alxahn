@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import {motion,useMotionValue, useTransform} from "framer-motion";
-import { HIGHLIGHTS } from '../data/constants';
+import { PROJECTS } from '../data/constants';
 
 const styles = theme => ({
   card: {
@@ -12,23 +12,49 @@ const styles = theme => ({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth: '600px',
+    maxWidth: '500px',
   },
   content: {
     display: 'flex',
     flexDirection: 'column',
     padding: '20px',
   },
-  line: {
-
+  projects: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
   },
-  resume: {
-    fontWeight: 500,
-    paddingTop: 10,
+  project_icon_container: {
+    display: 'flex',
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '120px',
+    height: '120px',
+    borderRadius: '20px',
+    "&:hover": {
+      opacity: 0.5,
+    },
+  },
+  project_icon_overlay: {
+    fontColor: 'black',
+    position: 'absolute',
+    width: '120px',
+    height: '120px',
+    opacity: 0,
+    transition: '.5s ease',
+    padding: 5,
+    "&:hover": {
+      opacity: 1,
+      zIndex: 10,
+    },
   }
 });
 
-function Highlights(props) {
+function Projects(props) {
   const {classes, isVisible, onDragEnd, onDragEndCallback} = props;
 
   const x = useMotionValue(0);
@@ -50,21 +76,25 @@ function Highlights(props) {
       >
         <Paper className={classes.card} elevation={20}>
           <div className={classes.content}>
-            <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 20}}>
-              Highlights
+            <Typography variant="h5" gutterBottom style={{color: '#0050b3'}}>
+              Projects
             </Typography>
-            {
-              HIGHLIGHTS.map((highlight) => {
-                return (
-                  <div className={classes.line}>
-                    <Typography variant="subtitle1" gutterBottom>
-                      {highlight}
-                    </Typography>
-                  </div>      
-                )
-              })
-            }
-            <a className={classes.resume} href="./files/resume.pdf" target="_blank"> <i class="fa fa-download"></i> Download Resume</a>
+            <div className={classes.projects}>
+              {
+                PROJECTS.map((project) => {
+                  return (
+                    <a href={project.link} target="_blank" style={{color: 'black'}}>
+                      <Paper className={classes.project_icon_container}>
+                        <div className={classes.project_icon_overlay}>
+                          {project.description}
+                        </div>
+                        <img src={project.image_src} alt={project.title} style={{maxWidth: '110px', maxHeight: '90px'}}/>
+                      </Paper>
+                    </a>
+                  )
+                })
+              }
+            </div>
           </div>
         </Paper>
       </motion.div>
@@ -72,7 +102,7 @@ function Highlights(props) {
   );
 }
 
-Highlights.propTypes = {
+Projects.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
   isVisible: PropTypes.bool.isRequired,
@@ -80,4 +110,4 @@ Highlights.propTypes = {
   onDragEndCallback: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles, {withTheme: true})(Highlights);
+export default withStyles(styles, {withTheme: true})(Projects);

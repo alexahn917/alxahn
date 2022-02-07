@@ -57,8 +57,65 @@ export const WORK_EXPERIENCES = [
     },
   ]
 
+export const PROJECTS = [
+    {
+        title: 'OXOPolitics',
+        image_src: 'img/projects/oxopolitics.png',
+        description: 'Created an interactive website for social & political community',
+        link: 'https://oxopolitics.com/',
+    },
+    {
+        title: 'Bias',
+        image_src: 'img/projects/bias.png',
+        description: 'Launched an iOS application for the K-pop artists fans community',
+        link: 'https://apps.apple.com/us/app/bias-app/id1501987932',
+    },
+    {
+        title: 'MediBlock',
+        image_src: 'img/projects/mediblock.png',
+        description: 'Built a prototype for blockchain based decentralized medical treatment costs',
+        link: 'https://devpost.com/software/mediblock',
+    },
+    {
+        title: 'MAVI',
+        image_src: 'img/projects/mavi.png',
+        description: 'Created an AI mobile application for visually impaired using CV',
+        link: 'https://devpost.com/software/streetsmart-vc6hrf',
+    },
+    {
+        title: 'Semester.ly',
+        image_src: 'img/projects/semesterly.png',
+        description: 'Contributed in an open source search engine for universities’ course databases',
+        link: 'https://semester.ly/',
+    },
+    {
+        title: 'Facebook Sentiment Analysis',
+        image_src: 'img/logo/facebook.png',
+        description: 'Analyzed and visualized public responses to Facebook page posts using LDA and PCA',
+        link: '/files/facebook_sentiment_analysis.pdf'
+    },
+    {
+        title: 'Multi Modal Deep Learning',
+        image_src: 'img/projects/mlb.png',
+        description: 'Built a binary sports prediction model using multimodal data with a 60.1% accuracy.',
+        link: '/files/multimodal_deep_learning_prediction.pdf'
+    },
+    {
+        title: 'Ex Parte',
+        image_src: 'img/projects/ex_parte.png',
+        description: 'Built data ETL pipelines for constructing a relational database for legal documents.',
+    },
+    {
+        title: 'CafeIt',
+        image_src: 'img/projects/cafeit.png',
+        description: 'Developed an Android application for local café infrastructure.',
+    },
+
+];
+
 export default {
     PROFILE_INFO,
     HIGHLIGHTS,
     WORK_EXPERIENCES,
+    PROJECTS
 }

@@ -57,7 +57,7 @@ function Work(props) {
           <div className={classes.content}>
             <div>
               <img src={work.logo} style={{maxWidth: '75px', height: '50px', marginBottom: '5px'}} alt={work.title}/>
-              <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 20}}>
+              <Typography variant="h5" gutterBottom style={{color: '#0050b3', marginBottom: 10}}>
                 <b>{work.title}</b>
               </Typography>
             </div>

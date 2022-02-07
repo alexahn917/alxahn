@@ -5,6 +5,7 @@ import {useState} from 'react';
 import Main from '../screens/Main';
 import Highlights from '../screens/Highlights';
 import Work from '../screens/Work';
+import Projects from '../screens/Projects';
 
 const FLIPP_THRESHOLD = 130;
 
@@ -25,13 +26,14 @@ function onDragEnd(rotateX, rotateY, onDragEndCallback) {
 
 function MainContainer(props) {
   const {classes} = props;
-  const [screenIndex, setScreenIndex] = useState(0);
+  const [screenIndex, setScreenIndex] = useState(3);
 
   return (
     <div className={classes.container}>
       <Main isVisible={screenIndex === 0} onDragEnd={onDragEnd} onDragEndCallback={() => setScreenIndex(1)}/>
       <Highlights isVisible={screenIndex === 1} onDragEnd={onDragEnd} onDragEndCallback={() => setScreenIndex(2)}/>
-      <Work isVisible={screenIndex === 2} onDragEnd={onDragEnd} onDragEndCallback={() => setScreenIndex(0)}/>
+      <Work isVisible={screenIndex === 2} onDragEnd={onDragEnd} onDragEndCallback={() => setScreenIndex(3)}/>
+      <Projects isVisible={screenIndex === 3} onDragEnd={onDragEnd} onDragEndCallback={() => setScreenIndex(0)}/>
     </div>
   );
 }

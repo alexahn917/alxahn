@@ -21,6 +21,10 @@ const styles = theme => ({
   },
   line: {
 
+  },
+  resume: {
+    fontWeight: 500,
+    paddingTop: 10,
   }
 });
 
@@ -60,6 +64,7 @@ function Highlights(props) {
                 )
               })
             }
+            <a className={classes.resume} href="./files/resume.pdf" target="_blank"> <i class="fa fa-download"></i> Download Resume</a>
           </div>
         </Paper>
       </motion.div>

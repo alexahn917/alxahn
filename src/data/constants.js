@@ -14,7 +14,6 @@ export const HIGHLIGHTS = [
     'Alex is currently leading a team of 6 engineers, overseeing Instagram ads product development and product growth.',    
 ];
 
-
 export const WORK_EXPERIENCES = [
     {
       title: 'Meta',
@@ -31,7 +30,7 @@ export const WORK_EXPERIENCES = [
     },
     {
       title: 'Moloco',
-      role: 'Software Engineer',
+      role: 'Software Engineer Intern',
       begin: 'May 2017',
       end: 'May 2018',
       logo: 'img/logo/moloco.png',
@@ -45,7 +44,7 @@ export const WORK_EXPERIENCES = [
     },
     {
       title: 'Johns Hopkins University',
-      role: 'Research Engineer',
+      role: 'Research Assistant',
       begin: 'Sept 2016',
       end: 'May 2017',
       logo: 'img/logo/jhu.png',
